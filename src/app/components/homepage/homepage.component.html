@@ -1,3 +1,42 @@
-<p>
-  homepage works!
-</p>
+<!-- Uses a transparent header that draws on top of the layout's background -->
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--transparent">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title"> Book Monitoring System</span>
+
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">
+          <i class="material-icons">fingerprint</i>
+          <span>Login</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">
+         <i class="material-icons">notifications_off</i>
+         <span> Notification</span>
+      </a>
+      <a class="mdl-navigation__link" href="">
+         <i class="material-icons">email</i>
+         <span> Inbox</span>
+      </a>
+      <a class="mdl-navigation__link" href="">
+         <i class="material-icons">person</i>
+         <span> Sign up</span>
+      </a>
+      <a class="mdl-navigation__link" href="">
+         <i class="material-icons">fingerprint</i>
+         <span> Login</span>
+      </a>
+    </nav>
+  </div>
+  <!-- <main class="mdl-layout__content">
+  </main> -->
+</div>
