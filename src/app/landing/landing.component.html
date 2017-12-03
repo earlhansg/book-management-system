@@ -1,0 +1,48 @@
+<div class="demo-container demo-layout-transparent">
+   <mdl-layout #mdlLayout1="mdlLayout">
+      <mdl-layout-header mdl-layout-header-transparent>
+         <mdl-layout-header-row>
+            <mdl-layout-title>Book Management System</mdl-layout-title>
+            <mdl-layout-spacer></mdl-layout-spacer>
+            <nav class="mdl-navigation nav-pointer">
+               <a class="mdl-navigation__link mdl-dialog__actions"
+                  (click)="showLoginDialog()">
+                 <i class="material-icons">fingerprint</i>
+                 <span>Login</span>
+               </a>
+            </nav>
+         </mdl-layout-header-row>
+      </mdl-layout-header>
+      <mdl-layout-drawer>
+         <!-- <mdl-layout-title></mdl-layout-title> -->
+         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+              <i class="material-icons">home</i>
+              <span> Home</span>
+            </a>
+            <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+              <i class="material-icons">notifications_off</i>
+              <span> Notification</span>
+            </a>
+            <a class="mdl-navigation__link" [routerLink]="['/layout/l2']" (click)="mdlLayout1.closeDrawer()">
+              <i class="material-icons">email</i>
+              <span> Inbox</span>
+            </a>
+            <a class="mdl-navigation__link" [routerLink]="['/layout/l3']" (click)="mdlLayout1.closeDrawer()">
+              <i class="material-icons">person</i>
+              <span> Sign up</span>
+            </a>
+            <a class="mdl-navigation__link nav-pointer" (click)="mdlLayout1.closeDrawer(); showLoginDialog()">
+              <i class="material-icons">fingerprint</i>
+              <span> Login</span>
+            </a>
+         </nav>
+      </mdl-layout-drawer>
+      <!-- <mdl-layout-content>
+         <router-outlet></router-outlet>
+      </mdl-layout-content> -->
+   </mdl-layout>
+
+</div>
+
+<dialog-outlet></dialog-outlet>
