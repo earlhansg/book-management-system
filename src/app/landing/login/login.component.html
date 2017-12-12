@@ -1,28 +1,3 @@
-<!-- <div id="login-form">
-  <form class="">
-    <p>
-      <mdl-textfield label="Username" type="text" floating-label></mdl-textfield>
-    </p>
-    <p>
-      <mdl-textfield label="Password" type="password"  floating-label></mdl-textfield>
-    </p>
-    <p>
-    <button mdl-button (click)="onSubmit()" mdl-button-type="raised"
-            mdl-ripple mdl-colored="primary">Submit
-    </button>
-    </p>
-  </form>
-</div> -->
-<!-- <mdl-dialog id="login-form">
-  <h3 class="mdl-dialog__title">Edit User</h3>
-  <div class="mdl-dialog__content">
-    <mdl-textfield type="text" label="Username" floating-label autofocus></mdl-textfield>
-  </div>
-  <div class="mdl-dialog__actions">
-    <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Save</button>
-    <button mdl-button mdl-ripple>Cancel</button>
-  </div>
-</mdl-dialog> -->
 <div id="login-form">
   <h3 class="mdl-dialog__title">Book Management System</h3>
   <div class="mdl-dialog__content">
@@ -31,6 +6,7 @@
     <mdl-textfield type="password" label="Password" floating-label></mdl-textfield>
   </div>
   <div class="mdl-dialog__actions">
-    <button mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>Login</button>
+    <button mdl-button mdl-button-type="raised" mdl-colored="primary"
+            mdl-ripple (click)="goto()">Login</button>
   </div>
 </div>

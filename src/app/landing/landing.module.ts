@@ -12,10 +12,11 @@ import { LoginComponent } from './login/login.component';
 
 
 
+
 @NgModule({
   imports: [
     MdlModule,
-    LandingRouting
+    LandingRouting,
   ],
   declarations: [ LandingComponent, LoginComponent ],
   entryComponents: [LoginComponent],

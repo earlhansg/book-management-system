@@ -1,0 +1,69 @@
+<div class="demo-container" mdl-shadow="2">
+   <mdl-layout mdl-layout-fixed-header mdl-layout-fixed-drawer>
+      <mdl-layout-header>
+         <mdl-layout-header-row>
+            <!-- <mdl-layout-title>Book Management System</mdl-layout-title> -->
+            <mdl-layout-spacer></mdl-layout-spacer>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+               <!-- <a class="mdl-navigation__link" >Link</a> -->
+               <div class="header-icon">
+                 <a>
+                   <mdl-icon>notifications</mdl-icon>
+                 </a>
+               </div>
+
+               <button type="button" class="btn-user" mdl-button
+                       #btn1="mdlButton" (click)="m1.toggle($event, btn1)">
+                 <img src="../../assets/images/userpicture.png" alt="Avatar">
+               </button>
+
+               <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+                <mdl-menu-item mdl-ripple (click)="action()">Help</mdl-menu-item>
+                <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Settings</mdl-menu-item>
+                <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+                <mdl-menu-item>Logout</mdl-menu-item>
+              </mdl-menu>
+
+            </nav>
+         </mdl-layout-header-row>
+      </mdl-layout-header>
+      <mdl-layout-drawer>
+         <mdl-layout-title>
+           <div class="profile-picture">
+             <img class="profile-img" src="../../assets/images/userpicture.png" alt="Avatar">
+           </div>
+           <small class="user">Admin</small>
+         </mdl-layout-title>
+         <nav class="mdl-navigation">
+           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+             <i class="material-icons">home</i>
+             <span> Home</span>
+           </a>
+           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+             <i class="material-icons">library_books</i>
+             <span> Books</span>
+           </a>
+           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+             <i class="material-icons">card_membership</i>
+             <span> Membership</span>
+           </a>
+           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+             <i class="material-icons">perm_identity</i>
+             <span> Author</span>
+           </a>
+           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+             <i class="material-icons">report</i>
+             <span> Reports</span>
+           </a>
+           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+             <i class="material-icons">face</i>
+             <span> Logout</span>
+           </a>
+         </nav>
+      </mdl-layout-drawer>
+      <mdl-layout-content>
+         <!-- Your content goes here -->
+      </mdl-layout-content>
+   </mdl-layout>
+</div>
