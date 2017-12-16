@@ -15,7 +15,9 @@ import { LoginComponent } from './login/login.component';
 export class LandingComponent {
 
   constructor(private dialogService: MdlDialogService) {
+
   }
+
   showLoginDialog() {
 		const dialog = this.dialogService.showCustomDialog({
 			component: LoginComponent,
@@ -23,4 +25,5 @@ export class LandingComponent {
 			clickOutsideToClose: true
 		});
 	}
+
 }

@@ -36,7 +36,7 @@
            <small class="user">Admin</small>
          </mdl-layout-title>
          <nav class="mdl-navigation">
-           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']" (click)="mdlLayout1.closeDrawer()">
+           <a class="mdl-navigation__link" [routerLink]="['home']" >
              <i class="material-icons">home</i>
              <span> Home</span>
            </a>
@@ -63,7 +63,7 @@
          </nav>
       </mdl-layout-drawer>
       <mdl-layout-content>
-         <!-- Your content goes here -->
+         <router-outlet></router-outlet>
       </mdl-layout-content>
    </mdl-layout>
 </div>
