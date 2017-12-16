@@ -6,7 +6,8 @@ import { ChartsModule } from 'ng2-charts';
 import { DashboardComponent } from './dashboard.component';
 
 import { DashboardRouting } from './dashboard-routing.module';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { BookComponent } from './book/book.component'
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { HomeComponent } from './home/home.component'
     DashboardRouting,
     ChartsModule
   ],
-  declarations: [ DashboardComponent, HomeComponent ],
+  declarations: [ DashboardComponent, HomeComponent, BookComponent ],
   entryComponents: [],
   providers: [],
   bootstrap: [ DashboardComponent ]
