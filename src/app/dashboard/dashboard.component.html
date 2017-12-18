@@ -36,14 +36,22 @@
            <small class="user">Admin</small>
          </mdl-layout-title>
          <nav class="mdl-navigation">
-           <a class="mdl-navigation__link" [routerLink]="['home']" >
+           <a class="mdl-navigation__link" [routerLink]="['home']">
              <i class="material-icons">home</i>
              <span> Home</span>
            </a>
-           <a class="mdl-navigation__link" [routerLink]="['book']">
+           <a class="mdl-navigation__link" (click)="click(menuBook = true)">
              <i class="material-icons">library_books</i>
              <span> Books</span>
            </a>
+           <div *ngIf="menuBook == true">
+             <a class="mdl-navigation__link" [routerLink]="['books']">
+               <span> Books</span>
+             </a>
+             <a class="mdl-navigation__link" [routerLink]="['createBook']">
+               <span> Create</span>
+             </a>
+           </div>
            <a class="mdl-navigation__link" [routerLink]="['/layout/l1']">
              <i class="material-icons">card_membership</i>
              <span> Membership</span>

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 
+import { CommonModule } from '@angular/common';
+
 import { MdlModule } from '@angular-mdl/core';
 import { ChartsModule } from 'ng2-charts';
 
@@ -7,16 +9,18 @@ import { DashboardComponent } from './dashboard.component';
 
 import { DashboardRouting } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
-import { BookComponent } from './book/book.component'
+import { BookComponent } from './book/book.component';
+import { CreateComponent } from './book/create/create.component'
 
 
 @NgModule({
   imports: [
     MdlModule,
+    CommonModule,
     DashboardRouting,
     ChartsModule
   ],
-  declarations: [ DashboardComponent, HomeComponent, BookComponent ],
+  declarations: [ DashboardComponent, HomeComponent, BookComponent, CreateComponent ],
   entryComponents: [],
   providers: [],
   bootstrap: [ DashboardComponent ]

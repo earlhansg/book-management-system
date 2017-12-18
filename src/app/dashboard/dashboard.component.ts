@@ -10,6 +10,10 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // let values = true;
+  }
+
+  visit(){
   }
 
 }
