@@ -5,6 +5,8 @@ import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { BookComponent } from './book/book.component';
 import { CreateComponent } from './book/create/create.component';
+import { AuthorComponent } from './author/author.component';
+import { CreateAuthorComponent } from './author/create-author/create-author.component'
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -23,7 +25,22 @@ const routes: Routes = [
       {
         path: 'createBook',
         component: CreateComponent
+      },
+      {
+        path: 'author',
+        component: AuthorComponent,
+        // children: [
+        //   {
+        //     path: 'newAuthor',
+        //     component: CreateAuthorComponent
+        //   }
+        // ]
+      },
+      {
+          path: 'newAuthor',
+          component: CreateAuthorComponent
       }
+
     ]
   }
 ];

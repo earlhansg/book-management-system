@@ -10,7 +10,9 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRouting } from './dashboard-routing.module';
 import { HomeComponent } from './home/home.component';
 import { BookComponent } from './book/book.component';
-import { CreateComponent } from './book/create/create.component'
+import { CreateComponent } from './book/create/create.component';
+import { AuthorComponent } from './author/author.component';
+import { CreateAuthorComponent } from './author/create-author/create-author.component'
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import { CreateComponent } from './book/create/create.component'
     DashboardRouting,
     ChartsModule
   ],
-  declarations: [ DashboardComponent, HomeComponent, BookComponent, CreateComponent ],
+  declarations: [ DashboardComponent, HomeComponent, BookComponent, CreateComponent, AuthorComponent, CreateAuthorComponent ],
   entryComponents: [],
   providers: [],
   bootstrap: [ DashboardComponent ]
