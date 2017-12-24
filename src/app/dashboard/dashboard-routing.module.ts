@@ -6,7 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { BookComponent } from './book/book.component';
 import { CreateComponent } from './book/create/create.component';
 import { AuthorComponent } from './author/author.component';
-import { CreateAuthorComponent } from './author/create-author/create-author.component'
+import { CreateAuthorComponent } from './author/create-author/create-author.component';
+import { MembershipComponent } from './membership/membership.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
           path: 'newAuthor',
           component: CreateAuthorComponent
+      },
+      {
+          path: 'membership',
+          component: MembershipComponent
       }
 
     ]

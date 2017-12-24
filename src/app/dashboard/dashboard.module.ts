@@ -12,7 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { BookComponent } from './book/book.component';
 import { CreateComponent } from './book/create/create.component';
 import { AuthorComponent } from './author/author.component';
-import { CreateAuthorComponent } from './author/create-author/create-author.component'
+import { CreateAuthorComponent } from './author/create-author/create-author.component';
+import { MembershipComponent } from './membership/membership.component'
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { CreateAuthorComponent } from './author/create-author/create-author.comp
     DashboardRouting,
     ChartsModule
   ],
-  declarations: [ DashboardComponent, HomeComponent, BookComponent, CreateComponent, AuthorComponent, CreateAuthorComponent ],
+  declarations: [ DashboardComponent, HomeComponent, BookComponent, CreateComponent, AuthorComponent, CreateAuthorComponent, MembershipComponent ],
   entryComponents: [],
   providers: [],
   bootstrap: [ DashboardComponent ]
