@@ -8,6 +8,7 @@ import { CreateComponent } from './book/create/create.component';
 import { AuthorComponent } from './author/author.component';
 import { CreateAuthorComponent } from './author/create-author/create-author.component';
 import { MembershipComponent } from './membership/membership.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
           path: 'membership',
           component: MembershipComponent
+      },
+      {
+          path: 'users',
+          component: UserComponent
       }
 
     ]
