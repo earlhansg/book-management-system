@@ -14,7 +14,8 @@ import { CreateComponent } from './book/create/create.component';
 import { AuthorComponent } from './author/author.component';
 import { CreateAuthorComponent } from './author/create-author/create-author.component';
 import { MembershipComponent } from './membership/membership.component';
-import { UserComponent } from './user/user.component'
+import { UserComponent } from './user/user.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component'
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { UserComponent } from './user/user.component'
     DashboardRouting,
     ChartsModule
   ],
-  declarations: [ DashboardComponent, HomeComponent, BookComponent, CreateComponent, AuthorComponent, CreateAuthorComponent, MembershipComponent, UserComponent ],
+  declarations: [ DashboardComponent, HomeComponent, BookComponent, CreateComponent, AuthorComponent, CreateAuthorComponent, MembershipComponent, UserComponent, PagenotfoundComponent ],
   entryComponents: [],
   providers: [],
   bootstrap: [ DashboardComponent ]
