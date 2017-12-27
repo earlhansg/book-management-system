@@ -36,38 +36,58 @@
            <small class="user">Admin</small>
          </mdl-layout-title>
          <nav class="mdl-navigation">
-           <a class="mdl-navigation__link" [routerLink]="['home']">
-             <i class="material-icons">home</i>
-             <span> Home</span>
-           </a>
-           <a class="mdl-navigation__link" (click)="click(menuBook = true)">
-             <i class="material-icons">library_books</i>
-             <span> Books</span>
-           </a>
-           <div *ngIf="menuBook == true">
-             <a class="mdl-navigation__link" [routerLink]="['books']">
+           <ul>
+             <li>
+               <a class="mdl-navigation__link" [routerLink]="['home']">
+                 <i class="material-icons">home</i>
+                 <span> Home</span>
+               </a>
+             </li>
+             <li>
+               <a class="mdl-navigation__link" (click)="click(menuBook = true)">
+               <i class="material-icons">library_books</i>
                <span> Books</span>
-             </a>
-             <a class="mdl-navigation__link" [routerLink]="['createBook']">
-               <span> Create</span>
-             </a>
-           </div>
-           <a class="mdl-navigation__link" [routerLink]="['membership']">
-             <i class="material-icons">card_membership</i>
-             <span> Membership</span>
-           </a>
-           <a class="mdl-navigation__link" [routerLink]="['newAuthor']">
-             <i class="material-icons">perm_identity</i>
-             <span> Author</span>
-           </a>
-           <a class="mdl-navigation__link" [routerLink]="['users']">
-             <i class="material-icons">supervisor_account</i>
-             <span> Users</span>
-           </a>
-           <a class="mdl-navigation__link" [routerLink]="['/layout/l1']">
-             <i class="material-icons">face</i>
-             <span> Logout</span>
-           </a>
+               </a>
+               <ul class="submenu">
+                 <li>
+                   <a href="" class="mdl-navigation__link" [routerLink]="['books']">
+                     <i class="material-icons">list</i>
+                     <span> List</span>
+                   </a>
+                 </li>
+                 <li>
+                    <a href="" class="mdl-navigation__link" [routerLink]="['createBook']">
+                      <i class="material-icons">create</i>
+                      <span> Create</span>
+                    </a>
+                 </li>
+               </ul>
+             </li>
+             <li>
+               <a class="mdl-navigation__link" [routerLink]="['membership']">
+                 <i class="material-icons">card_membership</i>
+                 <span> Membership</span>
+               </a>
+            </li>
+            <li>
+               <a class="mdl-navigation__link" [routerLink]="['newAuthor']">
+                 <i class="material-icons">perm_identity</i>
+                 <span> Author</span>
+               </a>
+             </li>
+             <li>
+               <a class="mdl-navigation__link" [routerLink]="['users']">
+                 <i class="material-icons">supervisor_account</i>
+                 <span> Users</span>
+               </a>
+             </li>
+             <li>
+               <a class="mdl-navigation__link" [routerLink]="['/layout/l1']">
+                 <i class="material-icons">face</i>
+                 <span> Logout</span>
+               </a>
+             </li>
+           </ul>
          </nav>
       </mdl-layout-drawer>
       <mdl-layout-content>
