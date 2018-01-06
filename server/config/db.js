@@ -20,6 +20,7 @@ db.sequelize = sequelize;
 
 //Models/tables
 db.users = require('../models/users')(sequelize, Sequelize);
+db.authors = require('../models/authors')(sequelize, Sequelize);
 // db.comments = require('../models/comments.js')(sequelize, Sequelize);
 // db.posts = require('../models/posts.js')(sequelize, Sequelize);
 
