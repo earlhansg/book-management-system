@@ -15,6 +15,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var authors = require('./routes/authors');
+var students = require('./routes/students');
 
 const app = express();
 const PORT = env.PORT;
@@ -41,6 +42,7 @@ db.sequelize.sync();
 app.use('/', index);
 app.use('/users', users);
 app.use('/authors', authors);
+app.use('/students', students);
 
 // using Api
 // var api = require('./server/router/routes/routes')(app, express);
