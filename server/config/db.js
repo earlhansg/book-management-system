@@ -22,9 +22,12 @@ db.sequelize = sequelize;
 db.users = require('../models/users')(sequelize, Sequelize);
 db.authors = require('../models/authors')(sequelize, Sequelize);
 db.students = require('../models/students')(sequelize, Sequelize);
+db.books = require('../models/books')(sequelize, Sequelize);
 
 //Relations
 db.students.belongsTo(db.users);
 db.users.hasMany(db.students);
+db.books.belongsTo(db.authors);
+db.authors.hasMany(db.books);
 
 module.exports = db;

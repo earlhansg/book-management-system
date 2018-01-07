@@ -16,6 +16,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var authors = require('./routes/authors');
 var students = require('./routes/students');
+var books = require('./routes/books');
 
 const app = express();
 const PORT = env.PORT;
@@ -43,6 +44,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/authors', authors);
 app.use('/students', students);
+app.use('/books', books);
 
 // using Api
 // var api = require('./server/router/routes/routes')(app, express);
