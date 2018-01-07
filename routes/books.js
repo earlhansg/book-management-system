@@ -3,13 +3,13 @@ var router = express.Router();
 var db = require('../server/config/db');
 
 
-/* GET author list. */
-// router.get('/', function(req, res, next) {
-//   return db
-//   .authors
-//   .findAll()
-//   .then(data => res.json(data));
-// });
+/* GET book list. */
+router.get('/', function(req, res, next) {
+  return db
+  .books
+  .findAll()
+  .then(books => res.json(books));
+});
 
 // POST new author
 router.post('/', function (req, res){
