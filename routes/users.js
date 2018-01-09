@@ -1,13 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../server/config/db');
+var jwt = require('jsonwebtoken');
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   return db
   .users
   .findAll()
-  .then(data => res.json(data));
+  .then(data =>
+    res.json(data));
 });
 
 // POST new user
@@ -29,4 +32,22 @@ router.post('/', function (req, res){
   });
 });
 
+router.post('/authenticate', function(req, res) {
+  db
+  .users
+  .findOne(
+    {
+      username: req.body.username
+    }
+  )
+  .then(user => {
+    var myToken = jwt.sign({ user: user.id },
+                                     'secret',
+                                    { expiresIn: 24 * 60 * 60 });
+    res.send(200, {'token': myToken,
+                   'userId': user.id,
+                   'username': user.username });
+
+  })
+});
 module.exports = router;

@@ -46,21 +46,10 @@ app.use('/authors', authors);
 app.use('/students', students);
 app.use('/books', books);
 
-// using Api
-// var api = require('./server/router/routes/routes')(app, express);
-// app.use ('/api',api);
-
-// var api = require('./server/router/routes/routes')(app, express);
-// app.use('/api', api);
 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', index);
-// app.use('/users', users);
-
-
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
