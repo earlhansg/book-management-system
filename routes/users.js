@@ -39,14 +39,22 @@ router.post('/authenticate', function(req, res) {
     {
       username: req.body.username
     }
-  )
-  .then(user => {
-    var myToken = jwt.sign({ user: user.id },
-                                     'secret',
-                                    { expiresIn: 24 * 60 * 60 });
-    res.send(200, {'token': myToken,
-                   'userId': user.id,
-                   'username': user.username });
+  ).select('password').exec(function(err, user){
+    if (err) throw err;
+    if(!user){
+       res.send({message: "Authentication failed. User not found.", success:false});
+    }
+    else if (user) {
+
+    }
+  })
+  // .then(user => {
+  //   var myToken = jwt.sign({ user: user.id },
+  //                                    'secret',
+  //                                   { expiresIn: 24 * 60 * 60 });
+  //   res.send(200, {'token': myToken,
+  //                  'userId': user.id,
+  //                  'username': user.username });
 
   })
 });
