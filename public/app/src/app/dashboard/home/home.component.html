@@ -1,0 +1,101 @@
+  <!-- <div id="home">
+    <div id="bar">
+      <div class="bar-chart">
+        <div style="display: block">
+          <canvas baseChart
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+          <button mdl-button (click)="randomize()" class="btn-update"
+                  mdl-button-type="raised" mdl-colored="accent">
+            Update
+          </button>
+        </div>
+      </div> -->
+      <!-- end of the bar -->
+      <!-- <div id="pie">
+        <div class="pie-chart">
+          <div style="display: block">
+            <canvas baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+      </div> -->
+  <!-- </div> -->
+<div id="home">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col">
+      <div style="display: block" class="chart-body">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+        <button mdl-button (click)="randomize()" class="btn-update"
+                mdl-button-type="raised" mdl-colored="accent">
+          Update
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--4-col">
+      <div style="display: block" class="chart-body pieChart">
+        <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <div style="display: block" class="chart-body radarChart">
+        <canvas baseChart
+                [datasets]="radarChartData"
+                [labels]="radarChartLabels"
+                [chartType]="radarChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- end of mdl-grid -->
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--8-col">
+        <div style="display: block;" class="chart-body">
+          <canvas baseChart width="400" height="230"
+                      [datasets]="lineChartData"
+                      [labels]="lineChartLabels"
+                      [options]="lineChartOptions"
+                      [colors]="lineChartColors"
+                      [legend]="lineChartLegend"
+                      [chartType]="lineChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+        </div>
+    </div>
+
+    <div class="mdl-cell mdl-cell--4-col margin-center">
+      <div style="display: block" class="chart-body doughnutChart">
+        <canvas baseChart
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    [chartType]="doughnutChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+<!-- end of home -->

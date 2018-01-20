@@ -1,0 +1,25 @@
+
+<div [formGroup]="form">
+  <div id="login-form">
+    <h3 class="mdl-dialog__title">Book Management System</h3>
+    <div class="mdl-dialog__content">
+      <mdl-textfield type="text"
+                     label="Username"
+                     formControlName="username"
+                     floating-label
+                     autofocus></mdl-textfield><br/>
+
+      <mdl-textfield type="password"
+                     label="Password"
+                     formControlName="password"
+                     floating-label></mdl-textfield>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button mdl-button
+              mdl-button-type="raised"
+              mdl-colored="primary"
+              mdl-ripple
+              (click)="login(form.value)">Login</button>
+    </div>
+  </div>
+</div>

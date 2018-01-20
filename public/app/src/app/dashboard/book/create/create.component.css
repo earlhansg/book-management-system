@@ -1,0 +1,62 @@
+#create {
+  background-color: #f2f2f2;
+}
+.create-card {
+  width: 570px;
+}
+.title-card {
+  margin-left: 2px;
+  font-size: 17px;
+  color: #404040;
+}
+.subtitle-card {
+  position: absolute;
+  margin: 37px 0 0 17px;
+  font-size: 10px;
+  color: #8c8c8c;
+}
+.book-icon {
+  color: #404040;
+}
+.no-margin {
+  margin: 0;
+}
+.book-info {
+  color:#1a1a1a;
+}
+.btn-save {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+.admin-name {
+  font-size: 10px;
+  color:#1a1a1a;
+}
+.admin-verified {
+  font-size: 10px;
+  color: #8c8c8c;
+}
+.option {
+  margin-top: 15px;
+}
+.verified_date {
+  font-size: 10px;
+  color: #8c8c8c;
+}
+
+@media screen and (max-width: 425px) {
+  .create-card {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .create-card {
+    width: 320px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .create-card {
+    width: 310px;
+  }
+}
