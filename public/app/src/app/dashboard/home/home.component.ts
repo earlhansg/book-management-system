@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
-
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,17 +7,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public http: HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  ping() {
-    this.http.get('http://example.com/api/things')
-      .subscribe(
-        data => console.log(data),
-        err => console.log(err)
-      );
   }
 
   public barChartOptions:any = {

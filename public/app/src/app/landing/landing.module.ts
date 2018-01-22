@@ -13,7 +13,7 @@ import { LandingRouting } from './landing-routing.module';
 import { LoginComponent } from './login/login.component';
 
 import { LoginUserService } from './login/login-user.service';
-import { AuthGuard } from '../guards/auth.guard';
+// import { AuthGuard } from '../guards/auth.guard';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { AuthGuard } from '../guards/auth.guard';
   ],
   declarations: [ LandingComponent, LoginComponent ],
   entryComponents: [LoginComponent],
-  providers: [LoginUserService, AuthGuard],
+  providers: [LoginUserService ],
   bootstrap: [ LandingComponent ]
 })
 export class LandingModule { }

@@ -20,7 +20,7 @@ export class LoginUserService {
       var currentUser = JSON.parse(localStorage.getItem('currentUser'));
       this.token = currentUser && currentUser.token;
   }
-  
+
   login(user: Credentials){
     return this.http.post<any>('http://localhost:3000/users/authenticate', user)
     .map((user_account ) => {

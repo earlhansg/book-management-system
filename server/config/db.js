@@ -31,3 +31,4 @@ db.books.belongsTo(db.authors);
 db.authors.hasMany(db.books);
 
 module.exports = db;
+  
