@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 
-// import { Credentials } from './login.model';
+import { Credentials } from './author.model';
 
 
 @Injectable()
@@ -17,6 +17,9 @@ export class AuthorService {
   constructor( private http: HttpClient) {
   }
 
+  create(author : Credentials) {
+    return this.http.post<any>('http://localhost:3000/authors', author);
+  }
 
 
 

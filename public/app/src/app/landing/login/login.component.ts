@@ -43,9 +43,6 @@ export class LoginComponent implements OnInit {
 		});
   }
 
-  // goto() {
-  //   this.router.navigate(['dashboard']);
-  // }
 
   login(user: Credentials) {
 		this.loaderVisible = true;

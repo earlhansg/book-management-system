@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
-
 import { MdlModule } from '@angular-mdl/core';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { ChartsModule } from 'ng2-charts';
 
 import { DashboardComponent } from './dashboard.component';
@@ -24,8 +26,12 @@ import { AuthorService } from './author/create-author/author.service';
   imports: [
     MdlModule,
     CommonModule,
+    HttpModule,
+    HttpClientModule,
     DashboardRouting,
-    ChartsModule
+    ChartsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     DashboardComponent,
