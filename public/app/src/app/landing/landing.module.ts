@@ -27,7 +27,7 @@ import { LoginUserService } from './login/login-user.service';
   ],
   declarations: [ LandingComponent, LoginComponent ],
   entryComponents: [LoginComponent],
-  providers: [LoginUserService ],
+  providers: [ LoginUserService ],
   bootstrap: [ LandingComponent ]
 })
 export class LandingModule { }

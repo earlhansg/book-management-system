@@ -7,9 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ChartsModule } from 'ng2-charts';
 
-import { DashboardComponent } from './dashboard.component';
 
 import { DashboardRouting } from './dashboard-routing.module';
+
+import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { BookComponent } from './book/book.component';
 import { CreateComponent } from './book/create/create.component';
@@ -18,8 +19,10 @@ import { CreateAuthorComponent } from './author/create-author/create-author.comp
 import { MembershipComponent } from './membership/membership.component';
 import { UserComponent } from './user/user.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AlertComponent } from './alert/alert.component';
 
 import { AuthorService } from './author/create-author/author.service';
+import { AlertService } from './alert/alert.service';
 
 
 @NgModule({
@@ -31,7 +34,7 @@ import { AuthorService } from './author/create-author/author.service';
     DashboardRouting,
     ChartsModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     DashboardComponent,
@@ -42,10 +45,14 @@ import { AuthorService } from './author/create-author/author.service';
     CreateAuthorComponent,
     MembershipComponent,
     UserComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    AlertComponent
   ],
   entryComponents: [],
-  providers: [AuthorService],
+  providers: [
+    AuthorService,
+    AlertService
+  ],
   bootstrap: [ DashboardComponent ]
 })
 export class DashboardModule {}

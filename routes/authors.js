@@ -28,6 +28,13 @@ router.post('/', function (req, res){
   .then(newAuthor => {
     res.json(newAuthor);
   });
+  // .catch(err => {
+  //   console.log("error ocurred",err);
+  //   res.send({
+  //     "code":400,
+  //     "message":"error ocurred"
+  //   })
+  // })
 });
 
 module.exports = router;

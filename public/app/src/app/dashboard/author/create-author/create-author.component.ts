@@ -5,6 +5,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Observable } from 'rxjs/Observable';
 
 import { AuthorService } from './author.service';
+import { AlertService } from '../../alert/alert.service';
+
 
 import { Credentials } from './author.model';
 
@@ -34,7 +36,8 @@ export class CreateAuthorComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
-    private authorService: AuthorService) { }
+    private authorService: AuthorService,
+    private alertService: AlertService) { }
 
   ngOnInit() {
     this.buildForm();
@@ -55,9 +58,11 @@ export class CreateAuthorComponent implements OnInit {
 
     this.authorService.create(author).subscribe(
       response => {
+        this.alertService.success('Registration successful', true);
         this.form.reset();
       },
       error => {
+        this.alertService.error(error);
         this.loaderVisible = false
       }
     );

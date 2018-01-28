@@ -1,0 +1,7 @@
+<!-- <div *ngIf="message">{{message.text}}</div> -->
+
+<div *ngIf="message"
+     [ngClass]="{ 'alert': message, 'isa_success': message.type === 'success', 'isa_error': message.type === 'error' }">
+     <i class="fa fa-info-circle">
+         {{message.text}}</i>
+</div>
