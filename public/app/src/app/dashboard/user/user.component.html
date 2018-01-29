@@ -1,47 +1,75 @@
-<div id="user-admin">
-  <div class="mdl-grid">
+<div [formGroup]="form" name="form">
+  <div id="user-admin">
     <div class="mdl-grid">
-      <div class="mdl-cell mdl-cell--12-col">
-        <mdl-card mdl-shadow="2" class="users-card">
-          <mdl-card-title>
-            <mdl-icon class="users-icon">supervisor_account</mdl-icon>
-            <h2 mdl-card-title-text class="title-card">
-              Users: Detail</h2>
-          </mdl-card-title>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+          <mdl-card mdl-shadow="2" class="users-card">
+            <mdl-card-title>
+              <mdl-icon class="users-icon">supervisor_account</mdl-icon>
+              <h2 mdl-card-title-text class="title-card">
+                Users: Detail</h2>
+            </mdl-card-title>
 
-          <small class="subtitle-card">Lorem ipsum dolor sit amet consectetur adipiscing elit.</small>
-          <hr class="no-margin">
+            <small class="subtitle-card">Lorem ipsum dolor sit amet consectetur adipiscing elit.</small>
+            <hr class="no-margin">
 
-          <mdl-card-supporting-text>
-            <div class="mdl-grid">
-              <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-col-phone">
-                <small class="personal-info">Login Credentials</small>
-                <mdl-textfield type="text" label="Username" floating-label></mdl-textfield>
+            <mdl-card-supporting-text>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-col-phone">
+                  <small class="personal-info">Login Credentials</small>
+                  <mdl-textfield type="text"
+                                 label="Username"
+                                 formControlName="username"
+                                 floating-label
+                                 autofocus></mdl-textfield>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
+                  <mdl-textfield type="text"
+                                 label="Password"
+                                 formControlName="password"
+                                 floating-label
+                                 autofocus></mdl-textfield>
+                </div>
               </div>
-              <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
-                <mdl-textfield type="password" label="Password" floating-label></mdl-textfield>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-col-phone">
+                  <small class="personal-info">Personal Info</small>
+                  <mdl-textfield type="text"
+                                 label="Firstname"
+                                 formControlName="firstname"
+                                 floating-label
+                                 autofocus></mdl-textfield>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
+                  <mdl-textfield type="text"
+                                 label="lastname"
+                                 formControlName="lastname"
+                                 floating-label
+                                 autofocus></mdl-textfield>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
+                  <mdl-textfield type="text"
+                                 label="Middlename"
+                                 formControlName="middlename"
+                                 floating-label
+                                 autofocus></mdl-textfield>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
+                  <mdl-textfield type="text"
+                                 label="Email"
+                                 formControlName="email"
+                                 floating-label
+                                 autofocus></mdl-textfield>
+                </div>
               </div>
-            </div>
-            <div class="mdl-grid">
-              <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--2-col-phone">
-                <small class="personal-info">Personal Info</small>
-                <mdl-textfield type="text" label="Firstname" floating-label></mdl-textfield>
-              </div>
-              <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
-                <mdl-textfield type="password" label="Lastname" floating-label></mdl-textfield>
-              </div>
-              <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
-                <mdl-textfield type="password" label="Middlename" floating-label></mdl-textfield>
-              </div>
-              <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--bottom mdl-cell--2-col-phone">
-                <mdl-textfield type="password" label="Email" floating-label></mdl-textfield>
-              </div>
-            </div>
-          </mdl-card-supporting-text>
-          <button mdl-button mdl-button-type="raised" mdl-colored="accent" class="btn-save">
-            Save
-          </button>
-        </mdl-card>
+            </mdl-card-supporting-text>
+            <button mdl-button
+                    mdl-button-type="raised"
+                    mdl-colored="accent"
+                    class="btn-save"
+                    (click)="create(form.value)">Save</button>
+          </mdl-card>
+        </div>
       </div>
     </div>
   </div>
