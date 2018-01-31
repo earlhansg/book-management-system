@@ -27,11 +27,12 @@ export class LoginUserService {
       // login successful if there's a jwt token in the response
         let token = user_account.token;
         let username = user_account.username;
+        let id = user_account.userId;
       if(token){
         // set token property
         this.token = token;
         // store username and jwt token in local storage to keep user logged in between page refreshes
-        localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
+        localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token, id: id }));
         // return true to indicate successful login
         return true;
       }
