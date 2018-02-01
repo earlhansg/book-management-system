@@ -13,13 +13,25 @@ import { BookService } from './book.service';
 })
 export class BookComponent implements OnInit {
 
-// Already added to master 
+// Already added to master
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private bookService: BookService) { }
 
   ngOnInit() {
+    this.getBooklist();
+  }
+
+  getBooklist(){
+    this.bookService.get().subscribe(
+      response => {
+        console.log(response)
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
