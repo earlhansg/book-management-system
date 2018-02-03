@@ -1,6 +1,8 @@
+
 var express = require('express');
 var router = express.Router();
 var db = require('../server/config/db');
+var promise = require('bluebird');
 
 
 /* GET book list. */
@@ -8,7 +10,17 @@ router.get('/', function(req, res, next) {
   return db
   .books
   .findAll()
-  .then(books => res.json(books));
+  .then(books => {
+    promise.all(books.map(book => {
+      return db.authors
+      .findById(book.author_id)
+      .then(author => {
+        book.dataValues.author_name = author.name;
+        return book;
+      });
+    })).then(result => res.json(result));
+
+  });
 });
 
 // POST new author

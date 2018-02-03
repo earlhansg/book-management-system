@@ -13,6 +13,7 @@ import { BookService } from './book.service';
 })
 export class BookComponent implements OnInit {
 
+public books: any;
 // Already added to master
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +27,8 @@ export class BookComponent implements OnInit {
   getBooklist(){
     this.bookService.get().subscribe(
       response => {
-        console.log(response)
+        this.books = response;
+        console.log(this.books);
       },
       error => {
         console.log(error);
