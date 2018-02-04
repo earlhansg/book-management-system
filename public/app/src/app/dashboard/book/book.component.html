@@ -2,10 +2,14 @@
   <h1 class="book-header">WORLD OF READING</h1>
 
   <div class="book-list">
-    <mdl-textfield type="text" icon="search" class="search"></mdl-textfield>
+    <mdl-textfield type="text" icon="search"
+                   [(ngModel)]="title"
+                   class="search">
+                   </mdl-textfield>
     <div class="mdl-grid">
       <hr>
-      <div class="mdl-cell mdl-cell--3-col cell-thumbnail" *ngFor="let book of books">
+      <div class="mdl-cell mdl-cell--3-col cell-thumbnail"
+           *ngFor="let book of books | booklistFilter: title">
         <div class="thumbnail">
           <a href="#">
             <img src="../../../assets/images/books/book1.jpg" alt="book1">

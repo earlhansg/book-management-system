@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { BookService } from './book.service';
 
+import { BooklistFilterPipe } from './booklist-filter.pipe';
+
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',

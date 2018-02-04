@@ -24,6 +24,8 @@ import { AlertComponent } from './alert/alert.component';
 import { AuthorService } from './author/create-author/author.service';
 import { AlertService } from './alert/alert.service';
 
+import { BooklistFilterPipe } from './book/booklist-filter.pipe';
+
 
 @NgModule({
   imports: [
@@ -46,7 +48,8 @@ import { AlertService } from './alert/alert.service';
     MembershipComponent,
     UserComponent,
     PagenotfoundComponent,
-    AlertComponent
+    AlertComponent,
+    BooklistFilterPipe
   ],
   entryComponents: [],
   providers: [
