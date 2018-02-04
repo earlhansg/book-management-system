@@ -1,9 +1,11 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { MdlDialogReference, MdlDialogService } from '@angular-mdl/core';
 
 import { LoginComponent } from './login/login.component';
+
+import { LoginUserService } from './login/login-user.service';
 
 
 @Component({
@@ -14,8 +16,13 @@ import { LoginComponent } from './login/login.component';
 })
 export class LandingComponent {
 
-  constructor(private dialogService: MdlDialogService) {
+  constructor(private dialogService: MdlDialogService,
+              private loginService: LoginUserService) {
 
+  }
+
+  ngOnInit() {
+    this.loginService.logout();
   }
 
   showLoginDialog() {

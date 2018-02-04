@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.buildForm();
+    this.loginService.logout();
   }
 
   buildForm(): void {
