@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    student_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     isbn: {
       type: DataTypes.STRING,
       required: true
@@ -35,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: false
     },
-    is_active: {
+    is_available: {
       type: DataTypes.BOOLEAN,
       defaultValue: true
     },

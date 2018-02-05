@@ -29,6 +29,7 @@ db.students.belongsTo(db.users);
 db.users.hasMany(db.students);
 db.books.belongsTo(db.authors);
 db.authors.hasMany(db.books);
+db.books.belongsTo(db.students);
+db.students.hasMany(db.books);
 
 module.exports = db;
-  

@@ -19,6 +19,7 @@
     "jsonwebtoken": "^8.1.0",
     "morgan": "^1.8.2",
     "mysql2": "^1.5.1",
+    "ng-dialog": "^1.4.0",
     "sequelize": "^4.28.6",
     "serve-favicon": "~2.4.2"
   },

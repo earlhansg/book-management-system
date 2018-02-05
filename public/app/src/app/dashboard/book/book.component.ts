@@ -37,5 +37,8 @@ public books: any;
       }
     );
   }
+  editBookList(book){
+    
+  }
 
 }
