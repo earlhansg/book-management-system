@@ -3,6 +3,14 @@ var router = express.Router();
 var db = require('../server/config/db');
 
 
+
+//GET all students
+router.get('/', function(req, res){
+  return db
+  .students
+  .findAll()
+  .then(student => res.json(student));
+});
 // POST new student
 router.post('/', function (req, res){
   const created_at = new Date();

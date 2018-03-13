@@ -44,14 +44,13 @@
                </a>
              </li>
              <li>
-               <a class="mdl-navigation__link" (click)="click(menuBook = true)">
+               <a class="mdl-navigation__link" [routerLink]="['books']">
                <i class="material-icons">library_books</i>
                <span> Books</span>
                </a>
-               <ul class="submenu">
+               <!-- <ul class="submenu">
                  <li>
                    <a class="mdl-navigation__link" [routerLink]="['books']">
-                   <!-- <a class="mdl-navigation__link" (click)="getBooklist()"> -->
                      <i class="material-icons">list</i>
                      <span> List</span>
                    </a>
@@ -62,7 +61,7 @@
                       <span> Create</span>
                     </a>
                  </li>
-               </ul>
+               </ul> -->
              </li>
              <li>
                <a class="mdl-navigation__link" [routerLink]="['membership']">

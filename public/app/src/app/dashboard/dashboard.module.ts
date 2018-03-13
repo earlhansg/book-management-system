@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MdlSelectModule } from '@angular-mdl/select';
+
+
 import { ChartsModule } from 'ng2-charts';
 
 
@@ -36,7 +39,8 @@ import { BooklistFilterPipe } from './book/booklist-filter.pipe';
     DashboardRouting,
     ChartsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MdlSelectModule
   ],
   declarations: [
     DashboardComponent,

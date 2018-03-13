@@ -8,6 +8,8 @@ import { AppRouting } from './app-routing.module';
 
 import { AuthGuard } from './guards/auth.guard';
 
+import { ConfigService } from './shared/services/config.service';
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,11 @@ import { AuthGuard } from './guards/auth.guard';
   declarations: [
     AppComponent
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    ConfigService,
+    { provide: 'API_URL', useValue: 'http://localhost:3000' },
+  ],
   bootstrap: [ AppComponent ],
 
 })

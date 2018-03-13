@@ -1,25 +1,143 @@
-<div id="Books">
-  <h1 class="book-header">WORLD OF READING</h1>
-
-  <div class="book-list">
-    <mdl-textfield type="text" icon="search"
-                   [(ngModel)]="title"
-                   class="search">
-                   </mdl-textfield>
+<div id="book-component">
+  <div [formGroup]="form" name="form">
     <div class="mdl-grid">
-      <hr>
-      <div class="mdl-cell mdl-cell--3-col cell-thumbnail"
-           *ngFor="let book of books | booklistFilter: title">
-        <div class="thumbnail">
-          <a href="#">
-            <img src="../../../assets/images/books/book1.jpg" alt="book1">
-          </a>
+      <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--12-col">
+          <div class="create-book">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col">
+                <small>Book Info</small>
+                <!-- <mdl-textfield type="text" label="Book Title" floating-label></mdl-textfield> -->
+                <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <mdl-textfield type="text"
+                                   label="Book Title"
+                                   formControlName="book_title"
+                                   (ngModel)="book_title"
+                                   autofocus
+                                   floating-label></mdl-textfield>
+                  </div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <!-- <mdl-textfield type="text" label="ISBN" floating-label></mdl-textfield> -->
+                    <mdl-textfield type="text"
+                                   label="ISBN"
+                                   formControlName="isbn"
+                                   autofocus
+                                   floating-label></mdl-textfield>
+                  </div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <!-- <mdl-textfield type="text" label="Published" floating-label></mdl-textfield> -->
+                    <mdl-textfield type="text"
+                                   label="Published"
+                                   formControlName="published"
+                                   autofocus
+                                   floating-label></mdl-textfield>
+                  </div>
+                  <div class="mdl-cell mdl-cell--3-col">
+                    <!-- <mdl-textfield type="text" label="Date Published" floating-label></mdl-textfield> -->
+                    <mdl-textfield type="text"
+                                   label="Date Published"
+                                   formControlName="date_published"
+                                   autofocus
+                                   floating-label></mdl-textfield>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col">
+                  <mdl-select formControlName="author_id" label="Author" floating-label>
+                      <mdl-option *ngFor="let author of this.authors"
+                                   [value]="author.id">{{author.name}}</mdl-option>
+                  </mdl-select>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <mdl-select formControlName="status" label="Status" floating-label>
+                      <!-- <mdl-option [value]="true">Available</mdl-option>
+                      <mdl-option [value]="false">Not Available</mdl-option> -->
+                      <mdl-option *ngFor="let availability of this.Availability"
+                                   [value]="availability.status">{{availability.status_name}}</mdl-option>
+                    </mdl-select>
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                    <mdl-select formControlName="student_id" label="Student" floating-label>
+                      <mdl-option *ngFor="let student of this.students"
+                                  [value]="student.id">{{student.firstname}} {{student.lastname}}</mdl-option>
+                      </mdl-select>
+                </div>
+              </div>
+              <!-- mdl-grid -->
+            </div>
+            <!-- mdl-grid -->
+          </div>
+          <!-- create-book -->
         </div>
-        <div class="caption">
-          <a href="">{{book.book_title}}</a>
-          <p class="title">by {{book.author_name}}</p>
-        </div>
-      </div>
+        <button mdl-button mdl-button-type="raised"
+                class="btn-create" *ngIf="!this.statusUpdate"
+                (click)="createBook(form.value)">Create
+        </button>
+        <button mdl-button mdl-button-type="raised"
+                class="btn-create" *ngIf="this.statusUpdate"
+                (click)="updateBook(form.value)">Update
+        </button>
+        <button mdl-button mdl-button-type="raised"
+                class="btn-create" *ngIf="this.statusUpdate"
+                (click)="cancel()">Cancel
+        </button>
+      <div class="mdl-layout-spacer"></div>
+
     </div>
+    <!-- mdl-grid -->
   </div>
-</div>
+    <div class="mdl-grid">
+      <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--10-col">
+          <mdl-textfield type="text" icon="search"
+                       [(ngModel)]="title"
+                       class="search">
+                       </mdl-textfield>
+
+          <div class="book-table">
+            <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+              <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric mdl-data-table__header--sorted-descending">Title</th>
+                  <th>ISBN</th>
+                  <th class="mdl-data-table__cell--non-numeric">Published</th>
+                  <th>Date Published</th>
+                  <th class="mdl-data-table__cell--non-numeric">Author</th>
+                  <th class="mdl-data-table__cell--non-numeric">Status</th>
+                  <th class="mdl-data-table__cell--non-numeric">Borrowed By</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let book of book_infos | booklistFilter: title">
+                  <td class="mdl-data-table__cell--non-numeric">{{book.book_title}}</td>
+                  <td>222211</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{book.published}}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{book.date_published | date: 'dd/MM/yyyy'}}</td>
+                  <td class="mdl-data-table__cell--non-numeric">{{book.book_author}}</td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <small *ngIf="book.is_available">
+                            <mdl-icon>event_available</mdl-icon></small>
+                    <small *ngIf="!book.is_available">
+                            <mdl-icon>not_interested</mdl-icon></small>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">{{book.BorrowedBy}}</td>
+                  <td>
+                    <button mdl-button mdl-button-type="raised"
+                            (click)="editBook(book)" class="btn-edit">Edit
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- book-table -->
+        </div>
+        <!-- mdl-grid -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+    <!-- mdl-grid -->
+  </div>
+  <!-- book-component -->

@@ -5,7 +5,6 @@ import { Observable } from 'rxjs/Observable';
 
 import { ConfigService } from '../../shared/services/config.service';
 
-import { Book } from './book.model';
 
 // Statics
 import 'rxjs/add/observable/throw';
@@ -19,7 +18,7 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class BookService {
+export class StudentService {
 
   url: string;
   headers: any;
@@ -29,46 +28,14 @@ export class BookService {
               private configService: ConfigService,
               @Inject('API_URL') private apiUrl: string) {
 
-    this.url = `${apiUrl}/books`;
+    this.url = `${apiUrl}/students`;
     this.headers = this.configService.getHeaders();
   }
 
-  get() {
+  getStudent() {
     return this.http.get(this.url, this.headers)
                .map(this.extractData)
                .catch(this.handleError);
-  }
-
-  addBook(book: Book) {
-    const body = JSON.stringify(book);
-    // console.log(body);
-    return this.http.post(this.url,body,this.headers).map((res: Response) => res.json());
-  }
-
-  // addBook(book: Book) {
-  //   const body = JSON.stringify(book);
-  //   // console.log(body);
-  //   return this.http.post(this.url,body,this.headers).map((res: Response) => res.json());
-  // }
-
-  // addBook(book: Book) {
-  //   const body = JSON.stringify(book);
-  //   // console.log(body);
-  //   return this.http.post(this.url,body,this.headers)
-  //     .map((res: Response) =>
-  //       // res.json()
-  //       this.http.get(this.url, this.headers)
-  //           .map(this.extractData =>
-  //
-  //           )
-  //   );
-  // }
-
-  updateBook(book: any) {
-    const body = JSON.stringify(book);
-    console.log(book);
-
-    return this.http.put(`${this.url}/${book.id}`, body, this.headers ).map((res: Response) => res.json());
   }
 
   private extractData(res:Response) {
